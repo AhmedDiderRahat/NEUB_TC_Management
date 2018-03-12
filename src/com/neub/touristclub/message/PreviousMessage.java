@@ -1,0 +1,509 @@
+package com.neub.touristclub.message;
+
+import com.neub.touristclub.developer.Developer;
+import com.neub.touristclub.mainadmin.HomePage;
+import com.neub.touristclub.mainadmin.accounts.AccountsInformation;
+import com.neub.touristclub.mainadmin.accounts.MembersFee;
+import com.neub.touristclub.mainadmin.events.EventsInformation;
+import com.neub.touristclub.mainadmin.members.ExecutiveMember;
+import com.neub.touristclub.mainadmin.members.GeneralMember;
+import com.neub.touristclub.mainadmin.adminsetting.Setting;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+/**
+ *
+ * @author Team-R&D_v.3
+ */
+public class PreviousMessage extends javax.swing.JFrame implements ActionListener{
+   public static int adminIdKey;
+    public PreviousMessage(int key) {
+        adminIdKey = key;
+        initComponents();
+        this.setVisible(true);
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
+        
+        homejMenuItem.addActionListener(this);
+        generalMemberjMenuItem.addActionListener(this);
+        executiveMemberjMenuItem.addActionListener(this);
+        memberfeejCheckBoxMenuItem.addActionListener(this);
+        accountsInfojMenuItem.addActionListener(this);
+        eventsjMenuItem.addActionListener(this);
+        sendMessagejMenuItem.addActionListener(this);
+        developerjMenuItem.addActionListener(this);
+        //previousMessagejMenuItem.addActionListener(this);
+        settingJmenuitem.addActionListener(this);
+        exitjMenuItem.addActionListener(this);    
+    }
+    
+    
+     @Override
+    public void actionPerformed(ActionEvent button) {
+        
+        // Menu item implement
+        if(button.getSource() == homejMenuItem)
+        {
+            try {
+                HomePage homePage = new HomePage(adminIdKey);
+                this.dispose();
+            } catch (Exception e) {
+            }
+        }
+        
+        if(button.getSource() == generalMemberjMenuItem)
+        {
+            try {
+                GeneralMember generalMember = new GeneralMember(adminIdKey);
+                this.dispose();
+            } catch (SQLException ex) {
+                Logger.getLogger(GeneralMember.class.getName()).log(Level.SEVERE, null, ex);
+            }   
+        }
+        
+        if(button.getSource() == executiveMemberjMenuItem)
+        {
+            try {
+                ExecutiveMember em = new ExecutiveMember(adminIdKey);
+                this.dispose();
+            } catch (SQLException ex) {
+                Logger.getLogger(ExecutiveMember.class.getName()).log(Level.SEVERE, null, ex);
+            }   
+        }
+        
+        if( (button.getSource() == accountsInfojMenuItem) )
+        {
+            try {
+                AccountsInformation accountsInformation = new AccountsInformation(adminIdKey);
+                this.dispose();
+            } catch (Exception e) {
+            }
+        }
+        
+        if( button.getSource() == memberfeejCheckBoxMenuItem)
+        {
+            try {
+                MembersFee fee = new MembersFee(adminIdKey);
+                this.dispose();
+            } catch (Exception e) {
+            }
+        }
+        
+        if( (button.getSource() == eventsjMenuItem) )
+        {
+            try {
+                EventsInformation ei = new EventsInformation(adminIdKey);
+                this.dispose();
+            } catch (Exception e) {
+            }
+        }
+        
+        if( (button.getSource() == sendMessagejMenuItem) )
+        {
+            try {
+                SendMessage message = new SendMessage(adminIdKey);
+                this.dispose();
+            } catch (Exception e) {
+            }
+        }
+        
+        if( (button.getSource() == settingJmenuitem) )
+        {
+            try {
+                
+                Setting s = new Setting(adminIdKey);
+                this.dispose();
+            } catch (Exception e) {
+            }
+        }
+        
+        if( (button.getSource() == developerjMenuItem) )
+        {
+            try {
+                Developer d = new Developer(adminIdKey);
+                //Deve setting = new Setting(adminIdKey);
+                this.dispose();
+            } catch (Exception e) {
+            }
+        }
+        
+        if(button.getSource() == exitjMenuItem)
+        {
+            try {
+                this.dispose();
+            } catch (Exception e) {
+            }
+        }
+        
+        
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+   
+
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        MessagerListjTable = new javax.swing.JTable();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        SelectedMessagejTextArea1 = new javax.swing.JTextArea();
+        WantToSendjButton1 = new javax.swing.JButton();
+        jPanel8 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        PreviousMessagejMenuBar = new javax.swing.JMenuBar();
+        HomejMenu = new javax.swing.JMenu();
+        homejMenuItem = new javax.swing.JMenuItem();
+        ExecutiveMemberjMenu = new javax.swing.JMenu();
+        executiveMemberjMenuItem = new javax.swing.JMenuItem();
+        generalMemberjMenuItem = new javax.swing.JMenuItem();
+        accountsInformationjMenu = new javax.swing.JMenu();
+        accountsInfojMenuItem = new javax.swing.JMenuItem();
+        memberfeejCheckBoxMenuItem = new javax.swing.JMenuItem();
+        eventsjMenu = new javax.swing.JMenu();
+        eventsjMenuItem = new javax.swing.JMenuItem();
+        endMessagejMenu = new javax.swing.JMenu();
+        sendMessagejMenuItem = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        SettingjMenu = new javax.swing.JMenu();
+        settingJmenuitem = new javax.swing.JMenuItem();
+        DeveloperjMenu = new javax.swing.JMenu();
+        developerjMenuItem = new javax.swing.JMenuItem();
+        exitsjMenu = new javax.swing.JMenu();
+        exitjMenuItem = new javax.swing.JMenuItem();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 153), 2, true));
+
+        MessagerListjTable.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        MessagerListjTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Date", "Message"
+            }
+        ));
+        MessagerListjTable.setRowHeight(25);
+        jScrollPane2.setViewportView(MessagerListjTable);
+        if (MessagerListjTable.getColumnModel().getColumnCount() > 0) {
+            MessagerListjTable.getColumnModel().getColumn(0).setMinWidth(150);
+            MessagerListjTable.getColumnModel().getColumn(0).setPreferredWidth(150);
+            MessagerListjTable.getColumnModel().getColumn(0).setMaxWidth(150);
+        }
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 675, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 454, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 204), 2));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 51, 153));
+        jLabel2.setText("Message");
+
+        SelectedMessagejTextArea1.setColumns(20);
+        SelectedMessagejTextArea1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        SelectedMessagejTextArea1.setRows(5);
+        SelectedMessagejTextArea1.setTabSize(4);
+        SelectedMessagejTextArea1.setPreferredSize(new java.awt.Dimension(200, 80));
+        jScrollPane3.setViewportView(SelectedMessagejTextArea1);
+
+        WantToSendjButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        WantToSendjButton1.setForeground(new java.awt.Color(0, 153, 51));
+        WantToSendjButton1.setText("SEND");
+        WantToSendjButton1.setBorder(null);
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(WantToSendjButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel2)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(WantToSendjButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(51, 0, 204));
+        jLabel10.setText("Message History");
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addContainerGap(202, Short.MAX_VALUE)
+                .addComponent(jLabel10)
+                .addGap(200, 200, 200))
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel10)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        HomejMenu.setText("Home");
+        HomejMenu.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+
+        homejMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.CTRL_MASK));
+        homejMenuItem.setText("Home");
+        HomejMenu.add(homejMenuItem);
+
+        PreviousMessagejMenuBar.add(HomejMenu);
+
+        ExecutiveMemberjMenu.setText(" Member");
+        ExecutiveMemberjMenu.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+
+        executiveMemberjMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.ALT_MASK));
+        executiveMemberjMenuItem.setText("Executive Member");
+        executiveMemberjMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                executiveMemberjMenuItemActionPerformed(evt);
+            }
+        });
+        ExecutiveMemberjMenu.add(executiveMemberjMenuItem);
+
+        generalMemberjMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_MASK));
+        generalMemberjMenuItem.setText("General Member");
+        generalMemberjMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                generalMemberjMenuItemActionPerformed(evt);
+            }
+        });
+        ExecutiveMemberjMenu.add(generalMemberjMenuItem);
+
+        PreviousMessagejMenuBar.add(ExecutiveMemberjMenu);
+
+        accountsInformationjMenu.setText("Accounts");
+        accountsInformationjMenu.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+
+        accountsInfojMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
+        accountsInfojMenuItem.setText("accounts info.");
+        accountsInformationjMenu.add(accountsInfojMenuItem);
+
+        memberfeejCheckBoxMenuItem.setText("member fee");
+        accountsInformationjMenu.add(memberfeejCheckBoxMenuItem);
+
+        PreviousMessagejMenuBar.add(accountsInformationjMenu);
+
+        eventsjMenu.setText("Events");
+        eventsjMenu.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+
+        eventsjMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
+        eventsjMenuItem.setText("events");
+        eventsjMenu.add(eventsjMenuItem);
+
+        PreviousMessagejMenuBar.add(eventsjMenu);
+
+        endMessagejMenu.setForeground(new java.awt.Color(0, 153, 51));
+        endMessagejMenu.setText("Message");
+        endMessagejMenu.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+
+        sendMessagejMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_MASK));
+        sendMessagejMenuItem.setText("send message");
+        sendMessagejMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sendMessagejMenuItemActionPerformed(evt);
+            }
+        });
+        endMessagejMenu.add(sendMessagejMenuItem);
+
+        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem2.setForeground(new java.awt.Color(0, 153, 51));
+        jMenuItem2.setText("previous message");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        endMessagejMenu.add(jMenuItem2);
+
+        PreviousMessagejMenuBar.add(endMessagejMenu);
+
+        SettingjMenu.setText("Setting");
+        SettingjMenu.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+
+        settingJmenuitem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.SHIFT_MASK));
+        settingJmenuitem.setText("admin setting");
+        SettingjMenu.add(settingJmenuitem);
+
+        PreviousMessagejMenuBar.add(SettingjMenu);
+
+        DeveloperjMenu.setText("Developer");
+        DeveloperjMenu.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+
+        developerjMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
+        developerjMenuItem.setText("information");
+        DeveloperjMenu.add(developerjMenuItem);
+
+        PreviousMessagejMenuBar.add(DeveloperjMenu);
+
+        exitsjMenu.setText("Exit");
+        exitsjMenu.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+
+        exitjMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_X, java.awt.event.InputEvent.CTRL_MASK));
+        exitjMenuItem.setText("exit");
+        exitsjMenu.add(exitjMenuItem);
+
+        PreviousMessagejMenuBar.add(exitsjMenu);
+
+        setJMenuBar(PreviousMessagejMenuBar);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(19, 19, 19)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(89, 89, 89))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(12, Short.MAX_VALUE)
+                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(38, 38, 38))
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void executiveMemberjMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_executiveMemberjMenuItemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_executiveMemberjMenuItemActionPerformed
+
+    private void generalMemberjMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generalMemberjMenuItemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_generalMemberjMenuItemActionPerformed
+
+    private void sendMessagejMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sendMessagejMenuItemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_sendMessagejMenuItemActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(PreviousMessage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(PreviousMessage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(PreviousMessage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(PreviousMessage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new PreviousMessage(1).setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu DeveloperjMenu;
+    private javax.swing.JMenu ExecutiveMemberjMenu;
+    private javax.swing.JMenu HomejMenu;
+    private javax.swing.JTable MessagerListjTable;
+    private javax.swing.JMenuBar PreviousMessagejMenuBar;
+    private javax.swing.JTextArea SelectedMessagejTextArea1;
+    private javax.swing.JMenu SettingjMenu;
+    private javax.swing.JButton WantToSendjButton1;
+    private javax.swing.JMenuItem accountsInfojMenuItem;
+    private javax.swing.JMenu accountsInformationjMenu;
+    private javax.swing.JMenuItem developerjMenuItem;
+    private javax.swing.JMenu endMessagejMenu;
+    private javax.swing.JMenu eventsjMenu;
+    private javax.swing.JMenuItem eventsjMenuItem;
+    private javax.swing.JMenuItem executiveMemberjMenuItem;
+    private javax.swing.JMenuItem exitjMenuItem;
+    private javax.swing.JMenu exitsjMenu;
+    private javax.swing.JMenuItem generalMemberjMenuItem;
+    private javax.swing.JMenuItem homejMenuItem;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JMenuItem memberfeejCheckBoxMenuItem;
+    private javax.swing.JMenuItem sendMessagejMenuItem;
+    private javax.swing.JMenuItem settingJmenuitem;
+    // End of variables declaration//GEN-END:variables
+
+   
+}

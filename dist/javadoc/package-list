@@ -1,0 +1,14 @@
+allTestingWork
+com.neub.touristclub.bean
+com.neub.touristclub.constants
+com.neub.touristclub.databaseconnection
+com.neub.touristclub.developer
+com.neub.touristclub.frontadmin
+com.neub.touristclub.mainPage
+com.neub.touristclub.mainadmin
+com.neub.touristclub.mainadmin.accounts
+com.neub.touristclub.mainadmin.adminsetting
+com.neub.touristclub.mainadmin.events
+com.neub.touristclub.mainadmin.members
+com.neub.touristclub.message
+com.neub.touristclub.test
